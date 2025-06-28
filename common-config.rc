@@ -1,7 +1,7 @@
 #!/bin/bash  -xue
 
-script_file=${BASH_SOURCE:-$0}
-script_dir=$(readlink -f "$(dirname "${script_file}")")
+current_srcfile=${BASH_SOURCE:-$0}
+current_srcdir=$(readlink -f "$(dirname "${current_srcfile}")")
 
 
 ##################################################################
@@ -16,7 +16,7 @@ script_dir=$(readlink -f "$(dirname "${script_file}")")
 ##    インストール先のマシンを識別する
 ##
 
-source  "${script_dir}/check-cluster.rc"
+source  "${current_srcdir}/check-cluster.rc"
 
 
 ##################################################################
