@@ -25,7 +25,7 @@ share_root_dir=${SHARE_ROOT_DIR:-"${share_root_default}"}
 
 cluster_os_type="${cluster_name}"
 
-if [[ "${cluster_name:}" = 'ubuntu' ]] ; then
+if [[ "${cluster_name}" = 'ubuntu' ]] ; then
     cluster_os_type='ubuntu'
 else
     cluster_os_type='unknown'
