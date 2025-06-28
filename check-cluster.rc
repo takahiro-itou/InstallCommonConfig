@@ -36,5 +36,6 @@ fi
 ##    ディレクトリ名を決定
 ##
 
-share_tools_dir="${share_root_dir}/tools/${cluster_os_type}"
-share_commonos_tools_dir="${share_root_dir}/tools/common"
+share_tools_root_dir="${share_root_dir}/Tools"
+share_archtype_tools_dir="${share_tools_root_dir}/${cluster_os_type}"
+share_commonos_tools_dir="${share_tools_root_dir}/common"

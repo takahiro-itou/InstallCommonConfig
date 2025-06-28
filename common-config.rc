@@ -24,7 +24,7 @@ source  "${current_srcdir}/check-cluster.rc"
 ##    インストール先のディレクトリ名を決定。
 ##
 
-share_install_root="${share_tools_dir}"
+share_install_root="${share_archtype_tools_dir}"
 flag_install_to_common=${project_install_to_common:-'false'}
 if [[ "X${flag_install_to_common}Y" = 'XtrueY' ]] ; then
     # このパッケージはアーカイブを展開するだけなので、
@@ -34,4 +34,4 @@ fi
 
 build_base_dir="${share_install_root}/binaries/${project_name}/builds"
 install_base_dir="${share_install_root}/binaries/${project_name}"
-src_package_dir="${share_root_dir}/Tools/packages/${project_name}"
+src_package_dir="${share_tools_root_dir}/packages/${project_name}"
