@@ -1,0 +1,15 @@
+#!/bin/bash  -xu
+
+##################################################################
+##
+##    マシン名からクラスタを自動判別し
+##    インストール先ディレクトリを調整する
+##
+
+long_hostname_default=$(hostname)
+short_hostname_default=$(hostname -s)
+
+long_hostname=${LONG_HOSTNAME:-"${long_hostname_default}"}
+short_hostname=${SHORT_HOSTNAME:-"${short_hostname_default}"}
+cluster_name=${CLUSTER_NAME:-"${short_hostname:0:6}"}
+user_name=${USER}
