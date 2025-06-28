@@ -13,3 +13,28 @@ long_hostname=${LONG_HOSTNAME:-"${long_hostname_default}"}
 short_hostname=${SHORT_HOSTNAME:-"${short_hostname_default}"}
 cluster_name=${CLUSTER_NAME:-"${short_hostname:0:6}"}
 user_name=${USER}
+
+
+##################################################################
+##
+##    ターゲットマシンの OS タイプを判別する
+##
+
+share_root_default='/share'
+share_root_dir=${SHARE_ROOT_DIR:-"${share_root_default}"}
+
+cluster_os_type="${cluster_name}"
+
+if [[ "${cluster_name:}" = 'ubuntu' ]] ; then
+    cluster_os_type='ubuntu'
+else
+    cluster_os_type='unknown'
+fi
+
+##################################################################
+##
+##    ディレクトリ名を決定
+##
+
+share_tools_dir="${share_root_dir}/tools/${cluster_os_type}"
+share_commonos_tools_dir="${share_root_dir}/tools/common"
