@@ -16,7 +16,7 @@ script_dir=$(readlink -f "$(dirname "${script_file}")")
 ##    インストール先のマシンを識別する
 ##
 
-source  "${script_file}/check-cluster.rc"
+source  "${script_dir}/check-cluster.rc"
 
 
 ##################################################################
