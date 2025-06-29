@@ -32,6 +32,6 @@ if [[ "X${flag_install_to_common}Y" = 'XtrueY' ]] ; then
     share_install_root="${share_commonos_tools_dir}"
 fi
 
-build_base_dir="${share_install_root}/binaries/${project_name}/builds"
-install_base_dir="${share_install_root}/binaries/${project_name}"
-src_package_dir="${share_tools_root_dir}/packages/${project_name}"
+build_base_default="${share_install_root}/binaries/${project_name}/builds"
+install_base_default="${share_install_root}/binaries/${project_name}"
+src_package_default="${share_tools_root_dir}/packages/${project_name}"
