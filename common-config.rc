@@ -1,0 +1,37 @@
+#!/bin/bash  -xue
+
+current_srcfile=${BASH_SOURCE:-$0}
+current_srcdir=$(readlink -f "$(dirname "${current_srcfile}")")
+
+
+##################################################################
+##
+##    Install Configurations
+##
+##################################################################
+
+
+##################################################################
+##
+##    インストール先のマシンを識別する
+##
+
+source  "${current_srcdir}/check-cluster.rc"
+
+
+##################################################################
+##
+##    インストール先のディレクトリ名を決定。
+##
+
+share_install_root="${share_archtype_tools_dir}"
+flag_install_to_common=${project_install_to_common:-'false'}
+if [[ "X${flag_install_to_common}Y" = 'XtrueY' ]] ; then
+    # このパッケージはアーカイブを展開するだけなので、
+    # アーキテクチャごとに分けずに common に纏める。
+    share_install_root="${share_commonos_tools_dir}"
+fi
+
+build_base_default="${share_install_root}/binaries/${project_name}/builds"
+install_base_default="${share_install_root}/binaries/${project_name}"
+src_package_default="${share_tools_root_dir}/packages/${project_name}"
